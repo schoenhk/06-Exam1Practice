@@ -181,6 +181,7 @@ def problem0a(n):
     if sum_of_digits(n) % 2 == 0:
         return False
 
+
 def run_test_problem0b():
     """ Tests the   problem0b   function. """
     print()
@@ -246,6 +247,7 @@ def problem0b(n):
     for k in range(n):
         count = count + is_prime(k + 2)
     return count
+
 
 def run_test_problem0c():
     """ Tests the   problem0c  function. """

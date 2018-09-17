@@ -3,7 +3,7 @@ PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
          Amanda Stouder, their colleagues and Hunter Schoenborn.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -112,7 +112,9 @@ def problem2a(circle, rectangle, window):
 
     circle.attach_to(window)
     rectangle.attach_to(window)
-    line = rg.Line(rg.Point(rectangle.corner_1, rectangle.corner_2))
+    right_corner = rg.Point(rectangle.corner_1.x + rectangle.corner_2.x, rectangle.corner_1.y)
+    left_corner = rg.Point(rectangle.corner_1.x, (rectangle.corner_1.y + rectangle.corner_2.y))
+    line = rg.Line(right_corner, left_corner)
     line.attach_to(window)
     window.render()
 
@@ -187,7 +189,15 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
+    rect.attach_to(win)
+    for k in range(n):
+        rect2 = rg.Rectangle(rect.corner_1, rect.corner_2)
+        rect2.center = (rect.center.x, rect.center.y)
+        rect2.corner_1 = (rect.corner_1.x + (2 * delta), rect.corner_1.y + 2 *delta)
+        rect.corner_2 = (rect.corner_2.x + (2 * delta), rect.corner_2.y + 2 *delta)
+        rect2. attach_to(win)
 
+    win.render()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

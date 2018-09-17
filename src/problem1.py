@@ -105,7 +105,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -165,7 +165,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -175,8 +175,8 @@ def problem1a(m, n):
     # ------------------------------------------------------------------
     import math
     total = 0
-    for k in range(abs(n)):
-        total = total + math.sin((k ** 2) - (m ** 2))
+    for k in range(n):
+        total = total + math.sin(m + k)
     return total
 
 def run_test_problem1b():
@@ -199,6 +199,11 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+
+    expected = 5
+    actual = 5
+    print(expected)
+    print(actual)
 
 
 def problem1b(m, f):
@@ -232,7 +237,10 @@ def problem1b(m, f):
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
 
-
+    count = 0
+    for k in range(n):
+        count = count + is_prime(k * m)
+    return count
 def run_test_problem1c():
     """ Tests the   problem1c   function. """
     print()
